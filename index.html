@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0f172a" />
+  <title>LaporJalan Pro — Smart Illegal Parking Response</title>
+  <meta name="description" content="Web prototipe profesional untuk pelaporan parkir liar, peta slot parkir resmi, dashboard petugas, eskalasi lintas instansi, indeks kepatuhan kendaraan, dan tracking laporan." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Navigasi utama">
+      <a class="brand" href="#beranda" data-route="beranda" aria-label="LaporJalan Pro Beranda">
+        <span class="brand-mark">LJ</span>
+        <span>
+          <strong>LaporJalan</strong>
+          <small>Smart Mobility Response</small>
+        </span>
+      </a>
+
+      <button class="mobile-close" id="closeSidebar" type="button" aria-label="Tutup menu">×</button>
+
+      <nav class="nav-list">
+        <button class="nav-item active" data-route="beranda" type="button"><span>⌂</span> Beranda</button>
+        <button class="nav-item" data-route="lapor" type="button"><span>▣</span> Lapor Cerdas</button>
+        <button class="nav-item" data-route="parkir" type="button"><span>⌖</span> Peta Parkir</button>
+        <button class="nav-item" data-route="dashboard" type="button"><span>◫</span> Dashboard Petugas</button>
+        <button class="nav-item" data-route="tracking" type="button"><span>↗</span> Tracking Laporan</button>
+        <button class="nav-item" data-route="kepatuhan" type="button"><span>⚑</span> Indeks Kendaraan</button>
+        <button class="nav-item" data-route="qa" type="button"><span>✓</span> QA Agent</button>
+      </nav>
+
+      <div class="sidebar-card">
+        <p class="eyebrow">Akun Pelapor</p>
+        <div class="trust-row">
+          <strong id="accuracyLabel">Akurasi 88%</strong>
+          <span class="trust-badge">Prioritas</span>
+        </div>
+        <div class="progress"><span id="accuracyBar" style="width:88%"></span></div>
+        <small>Laporan valid menaikkan prioritas antrean.</small>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="hamburger" id="openSidebar" type="button" aria-label="Buka menu">☰</button>
+          <div>
+            <p class="eyebrow" id="pageEyebrow">Command Center</p>
+            <h1 id="pageTitle">Beranda Operasional</h1>
+          </div>
+        </div>
+        <div class="topbar-actions">
+          <button class="ghost-btn" id="seedDemo" type="button">Reset Demo</button>
+          <button class="primary-btn" data-route="lapor" type="button">Buat Laporan</button>
+        </div>
+      </header>
+
+      <section class="view active" id="view-beranda" data-title="Beranda Operasional" data-eyebrow="Command Center">
+        <div class="hero-grid">
+          <article class="hero-card reveal">
+            <div class="hero-copy">
+              <p class="pill">Smart illegal parking response platform</p>
+              <h2>Pelaporan aman, pencegahan parkir liar, dan penindakan petugas dalam satu web.</h2>
+              <p>Prototipe ini menghubungkan pelapor warga, pengendara, satpam gedung, dan instansi berwenang melalui alur laporan yang transparan, responsif, dan mudah dipantau.</p>
+              <div class="hero-actions">
+                <button class="primary-btn large" data-route="lapor" type="button">Mulai Lapor</button>
+                <button class="secondary-btn large" data-route="parkir" type="button">Lihat Slot Parkir</button>
+              </div>
+            </div>
+            <div class="hero-visual" aria-label="Ilustrasi sistem respons">
+              <div class="orbit orbit-one"></div>
+              <div class="orbit orbit-two"></div>
+              <div class="phone-mock">
+                <div class="phone-top"></div>
+                <div class="scan-frame">
+                  <span></span>
+                  <b id="heroPlate">DA 7291 ZK</b>
+                </div>
+                <div class="mini-timeline">
+                  <i></i><i></i><i></i><i></i>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <aside class="live-panel reveal delay-1">
+            <div class="panel-head">
+              <p class="eyebrow">Live Overview</p>
+              <span class="live-dot">Live</span>
+            </div>
+            <div class="metric-stack">
+              <div class="metric-card"><span>Laporan Aktif</span><strong id="statActive">0</strong></div>
+              <div class="metric-card"><span>Slot Tersedia</span><strong id="statSlots">0</strong></div>
+              <div class="metric-card"><span>Zona Steril</span><strong>7</strong></div>
+              <div class="metric-card"><span>Rapor Merah</span><strong id="statRed">0</strong></div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="section-heading reveal">
+          <p class="eyebrow">Core Workflow</p>
+          <h3>Semua fitur utama sudah disusun menjadi modul web yang bisa diakses.</h3>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card reveal"><span>01</span><h4>Smart Report Camera</h4><p>Deteksi plat demo, unggah bukti, kategori dampak, privasi anonim, GPS, dan submit laporan.</p></article>
+          <article class="feature-card reveal"><span>02</span><h4>Real-Time Parking</h4><p>Peta slot parkir resmi, zonasi warna, dan halte/titik jemput ojol yang legal.</p></article>
+          <article class="feature-card reveal"><span>03</span><h4>Dispatcher Dashboard</h4><p>Petugas dapat verifikasi, mengubah status, dan eskalasi ke Dishub/Satpol PP.</p></article>
+          <article class="feature-card reveal"><span>04</span><h4>Live Tracking</h4><p>Pelapor dapat melacak status laporan berbasis timeline dari diterima sampai selesai.</p></article>
+          <article class="feature-card reveal"><span>05</span><h4>Compliance Index</h4><p>Plat yang berulang melanggar otomatis masuk indeks kepatuhan kendaraan.</p></article>
+          <article class="feature-card reveal"><span>06</span><h4>QA Agent</h4><p>Panel pengecekan otomatis untuk memastikan menu, form, data, dan aksi penting tersedia.</p></article>
+        </div>
+      </section>
+
+      <section class="view" id="view-lapor" data-title="Lapor Cerdas" data-eyebrow="Citizen Smart Report">
+        <div class="two-col">
+          <article class="card reveal">
+            <div class="panel-head">
+              <div>
+                <p class="eyebrow">Smart Report Camera</p>
+                <h2>Kamera pelaporan aman</h2>
+              </div>
+              <span class="status-chip" id="cameraStatus">Mode demo</span>
+            </div>
+
+            <div class="camera-wrap">
+              <video id="cameraVideo" autoplay playsinline muted hidden></video>
+              <canvas id="captureCanvas" hidden></canvas>
+              <div class="camera-placeholder" id="cameraPlaceholder">
+                <div class="scan-corners"></div>
+                <p>Arahkan kamera ke kendaraan atau gunakan simulasi deteksi plat.</p>
+                <strong id="detectedPlate">Belum terdeteksi</strong>
+              </div>
+            </div>
+
+            <div class="button-row wrap">
+              <button class="secondary-btn" id="startCamera" type="button">Aktifkan Kamera</button>
+              <button class="secondary-btn" id="detectPlate" type="button">Simulasi Deteksi Plat</button>
+              <button class="ghost-btn" id="captureEvidence" type="button">Ambil Bukti</button>
+              <label class="upload-btn" for="evidenceUpload">Unggah Bukti</label>
+              <input id="evidenceUpload" type="file" accept="image/*" hidden />
+            </div>
+
+            <div class="evidence-preview" id="evidencePreview" aria-live="polite">
+              <span>Belum ada bukti gambar.</span>
+            </div>
+          </article>
+
+          <form class="card report-form reveal delay-1" id="reportForm">
+            <div class="panel-head">
+              <div>
+                <p class="eyebrow">Impact-Based Reporting</p>
+                <h2>Detail laporan</h2>
+              </div>
+              <span class="status-chip green">Anonim aman</span>
+            </div>
+
+            <label class="field">
+              <span>Nomor plat</span>
+              <input id="plateInput" name="plate" type="text" placeholder="Contoh: DA 7291 ZK" autocomplete="off" required />
+            </label>
+
+            <div class="field">
+              <span>Pilih dampak utama</span>
+              <div class="impact-grid" role="radiogroup" aria-label="Kategori dampak laporan">
+                <button class="impact-option active" data-impact="Menghalangi akses rumah/kos" data-severity="Tinggi" type="button">Menghalangi Akses</button>
+                <button class="impact-option" data-impact="Parkir di bahu jalan/trotoar" data-severity="Sedang" type="button">Bahu Jalan/Trotoar</button>
+                <button class="impact-option" data-impact="Kerumunan transportasi online" data-severity="Sedang" type="button">Kerumunan Ojol</button>
+                <button class="impact-option" data-impact="Pelanggaran berulang" data-severity="Kritis" type="button">Pelanggaran Berulang</button>
+              </div>
+            </div>
+
+            <div class="form-grid">
+              <label class="field">
+                <span>Lokasi kejadian</span>
+                <input id="locationInput" name="location" type="text" placeholder="Contoh: Depan Gedung A" required />
+              </label>
+              <label class="field">
+                <span>Prioritas</span>
+                <select id="priorityInput" name="priority">
+                  <option>Otomatis</option>
+                  <option>Kritis</option>
+                  <option>Tinggi</option>
+                  <option>Sedang</option>
+                  <option>Rendah</option>
+                </select>
+              </label>
+            </div>
+
+            <label class="field">
+              <span>Catatan singkat</span>
+              <textarea id="noteInput" name="note" rows="4" placeholder="Jelaskan situasi singkat tanpa menyebut data pribadi."></textarea>
+            </label>
+
+            <div class="toggle-card">
+              <div>
+                <strong>Mode anonim</strong>
+                <p>Nama pelapor tidak ditampilkan kepada publik atau pelanggar.</p>
+              </div>
+              <label class="switch">
+                <input id="anonymousInput" type="checkbox" checked />
+                <span></span>
+              </label>
+            </div>
+
+            <div class="button-row split">
+              <button class="secondary-btn" id="useLocation" type="button">Ambil GPS</button>
+              <button class="primary-btn" type="submit">Kirim Laporan</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section class="view" id="view-parkir" data-title="Peta Parkir" data-eyebrow="Prevention & Navigation">
+        <div class="map-layout">
+          <article class="card reveal map-card">
+            <div class="panel-head">
+              <div>
+                <p class="eyebrow">Real-Time Parking Slot</p>
+                <h2>Peta slot parkir, zona steril, dan halte ojol</h2>
+              </div>
+              <button class="ghost-btn" id="refreshSlots" type="button">Refresh Slot</button>
+            </div>
+
+            <div class="city-map" id="cityMap" aria-label="Peta demo interaktif">
+              <div class="road road-main"></div>
+              <div class="road road-second"></div>
+              <div class="zone zone-red">Zona Merah</div>
+              <div class="zone zone-yellow">Zona Pantau</div>
+              <button class="pin parking-pin" style="--x:18%;--y:28%" data-lot="Kampus Utama" type="button">P</button>
+              <button class="pin parking-pin" style="--x:70%;--y:25%" data-lot="Gedung Timur" type="button">P</button>
+              <button class="pin parking-pin" style="--x:58%;--y:72%" data-lot="Area Basement" type="button">P</button>
+              <button class="pin ojol-pin" style="--x:31%;--y:67%" data-drop="Halte Ojol Barat" type="button">O</button>
+              <button class="pin ojol-pin" style="--x:82%;--y:58%" data-drop="Drop Zone Timur" type="button">O</button>
+              <div class="map-label label-one">Bahu jalan steril</div>
+              <div class="map-label label-two">Akses warga</div>
+            </div>
+
+            <div class="legend-row">
+              <span><i class="red"></i> Larangan keras</span>
+              <span><i class="yellow"></i> Zona pantau</span>
+              <span><i class="blue"></i> Parkir resmi</span>
+              <span><i class="purple"></i> Halte ojol</span>
+            </div>
+          </article>
+
+          <aside class="card reveal delay-1">
+            <div class="panel-head">
+              <div>
+                <p class="eyebrow">Detail Lokasi</p>
+                <h2 id="mapDetailTitle">Pilih titik pada peta</h2>
+              </div>
+            </div>
+            <div id="mapDetail" class="map-detail empty-state">
+              Klik pin P untuk parkir resmi atau pin O untuk titik jemput ojol legal.
+            </div>
+            <div class="parking-list" id="parkingList"></div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="view" id="view-dashboard" data-title="Dashboard Petugas" data-eyebrow="Dispatcher & Enforcement">
+        <div class="dashboard-grid">
+          <article class="card reveal wide">
+            <div class="panel-head">
+              <div>
+                <p class="eyebrow">Dispatcher Dashboard</p>
+                <h2>Antrean laporan masuk</h2>
+              </div>
+              <div class="filter-tabs" id="dashboardFilters">
+                <button class="active" data-filter="Semua" type="button">Semua</button>
+                <button data-filter="Kritis" type="button">Kritis</button>
+                <button data-filter="Tinggi" type="button">Tinggi</button>
+                <button data-filter="Eskalasi" type="button">Eskalasi</button>
+              </div>
+            </div>
+            <div id="reportQueue" class="report-queue"></div>
+          </article>
+
+          <aside class="card reveal delay-1">
+            <p class="eyebrow">Operational Notes</p>
+            <h2>Mode petugas</h2>
+            <div class="ops-list">
+              <div><strong>Verifikasi cepat</strong><span>Validasi plat dan dampak laporan.</span></div>
+              <div><strong>Eskalasi instansi</strong><span>Teruskan ke Dishub/Satpol PP bila di luar wewenang.</span></div>
+              <div><strong>Update progres</strong><span>Status langsung muncul di menu tracking.</span></div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="view" id="view-tracking" data-title="Tracking Laporan" data-eyebrow="Live Progress Tracking">
+        <div class="tracking-layout">
+          <article class="card reveal">
+            <div class="panel-head">
+              <div>
+                <p class="eyebrow">Cari Laporan</p>
+                <h2>Pelacakan status real-time</h2>
+              </div>
+            </div>
+            <label class="field">
+              <span>Masukkan ID laporan atau nomor plat</span>
+              <input id="trackingSearch" type="text" placeholder="Contoh: LJ-2401 atau DA 7291 ZK" />
+            </label>
+            <div class="button-row">
+              <button class="primary-btn" id="findTracking" type="button">Lacak</button>
+              <button class="ghost-btn" id="latestTracking" type="button">Gunakan Terbaru</button>
+            </div>
+            <div class="tracking-card" id="trackingSummary"></div>
+          </article>
+
+          <article class="card reveal delay-1">
+            <div class="panel-head">
+              <div>
+                <p class="eyebrow">Timeline</p>
+                <h2>Progres tindakan</h2>
+              </div>
+              <button class="secondary-btn" id="advanceTracking" type="button">Majukan Status Demo</button>
+            </div>
+            <div class="timeline" id="timeline"></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="view" id="view-kepatuhan" data-title="Indeks Kendaraan" data-eyebrow="Vehicle Compliance Index">
+        <div class="card reveal">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">Compliance Intelligence</p>
+              <h2>Rapor kendaraan berdasarkan riwayat pelanggaran</h2>
+            </div>
+            <label class="search-field">
+              <input id="vehicleSearch" type="search" placeholder="Cari plat kendaraan..." />
+            </label>
+          </div>
+          <div class="compliance-grid" id="complianceGrid"></div>
+        </div>
+      </section>
+
+      <section class="view" id="view-qa" data-title="QA Agent" data-eyebrow="Feature Audit">
+        <div class="qa-layout">
+          <article class="card reveal">
+            <div class="panel-head">
+              <div>
+                <p class="eyebrow">Automated Feature Check</p>
+                <h2>Agent pengecek fitur sebelum rilis</h2>
+              </div>
+              <button class="primary-btn" id="runQa" type="button">Run QA Agent</button>
+            </div>
+            <p class="muted">Agent ini mengecek keberadaan menu, form, tombol aksi, penyimpanan data lokal, komponen tracking, dashboard, dan responsivitas dasar. Hasilnya bersifat pengujian front-end demo.</p>
+            <div class="qa-score" id="qaScore">Belum dijalankan</div>
+          </article>
+          <article class="card reveal delay-1">
+            <div class="panel-head">
+              <div>
+                <p class="eyebrow">Checklist</p>
+                <h2>Hasil pengecekan</h2>
+              </div>
+            </div>
+            <div class="qa-results" id="qaResults"></div>
+          </article>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
